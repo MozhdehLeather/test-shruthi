@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Varsha Swayamvaram</title>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html {
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      background: #fafafa;
+      color: #1a1a1a;
+      padding: 30px 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      width: 100%;
+    }
+
+    /* Header - Mobile Optimized */
+    .header {
+      text-align: center;
+      margin-bottom: 60px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid #e8e8e8;
+    }
+
+    .header h1 {
+      font-size: 2.2rem;
+      font-weight: 400;
+      margin-bottom: 6px;
+      letter-spacing: -0.3px;
+      line-height: 1.2;
+    }
+
+    .header p {
+      font-size: 0.9rem;
+      color: #666;
+      font-weight: 300;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    /* Sections - Mobile Friendly */
+    .section {
+      margin-bottom: 60px;
+      width: 100%;
+    }
+
+    .section-title {
+      font-size: 0.95rem;
+      font-weight: 500;
+      margin-bottom: 24px;
+      color: #333;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #eee;
+    }
+
+    /* Product list - Touch Optimized */
+    .list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      width: 100%;
+    }
+
+    .list-item {
+      font-size: 1rem;
+      color: #444;
+      padding: 16px 0;
+      border-bottom: 1px solid #eee;
+      font-weight: 300;
+      transition: all 0.2s ease;
+      min-height: 52px;
+      display: flex;
+      align-items: center;
+    }
+
+    .list-item:active {
+      background-color: rgba(0, 0, 0, 0.02);
+      transform: translateY(1px);
+    }
+
+    .list-item:last-child {
+      border-bottom: none;
+    }
+
+    /* Opening - Mobile Centered */
+    .opening {
+      text-align: center;
+      padding: 40px 20px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.03);
+      margin: 40px 0;
+      width: 100%;
+    }
+
+    .opening h2 {
+      font-size: 1.3rem;
+      font-weight: 400;
+      margin-bottom: 8px;
+      color: #333;
+    }
+
+    .opening p {
+      font-size: 1rem;
+      color: #777;
+      font-weight: 300;
+    }
+
+    /* Parent companies - Stacked on Mobile */
+    .parents {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+    }
+
+    .parent {
+      background: #fff;
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.03);
+      transition: all 0.2s ease;
+      width: 100%;
+    }
+
+    .parent:active {
+      transform: translateY(2px);
+      box-shadow: 0 1px 8px rgba(0, 0, 0, 0.02);
+    }
+
+    .parent h3 {
+      font-size: 1rem;
+      font-weight: 500;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .parent a {
+      font-size: 0.95rem;
+      color: #555;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s ease, border-color 0.2s ease;
+      font-weight: 300;
+      display: inline-block;
+      padding: 4px 0;
+      min-height: 44px;
+      line-height: 1.4;
+    }
+
+    /* Mobile-specific touch target sizing */
+    .parent a,
+    .list-item {
+      touch-action: manipulation;
+    }
+
+    /* Decorative elements - Mobile Adjusted */
+    .divider {
+      width: 60px;
+      height: 1px;
+      background: #ddd;
+      margin: 30px auto;
+    }
+
+    /* Footer - Mobile Optimized */
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      padding-top: 30px;
+      border-top: 1px solid #e8e8e8;
+      font-size: 0.85rem;
+      color: #888;
+      font-weight: 300;
+      letter-spacing: 0.5px;
+      width: 100%;
+    }
+
+    /* Safe Area for Notch Phones */
+    @supports (padding: max(0px)) {
+      body {
+        padding-left: max(16px, env(safe-area-inset-left));
+        padding-right: max(16px, env(safe-area-inset-right));
+        padding-bottom: max(30px, env(safe-area-inset-bottom));
+      }
+    }
+
+    /* Tablet Breakpoint */
+    @media (min-width: 768px) {
+      body {
+        padding: 60px 30px;
+      }
+      
+      .header h1 {
+        font-size: 2.8rem;
+      }
+      
+      .header p {
+        font-size: 1rem;
+      }
+      
+      .list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 16px;
+      }
+      
+      .list-item {
+        border-bottom: none;
+        padding: 12px 0;
+        min-height: auto;
+      }
+      
+      .parents {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 24px;
+      }
+      
+      .parent:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
+      }
+      
+      .parent:active {
+        transform: translateY(0);
+      }
+    }
+
+    /* Desktop Breakpoint */
+    @media (min-width: 1024px) {
+      body {
+        padding: 80px 20px;
+      }
+      
+      .container {
+        max-width: 800px;
+      }
+    }
+
+    /* Large Mobile Breakpoint */
+    @media (min-width: 480px) and (max-width: 767px) {
+      .header h1 {
+        font-size: 2.4rem;
+      }
+      
+      .opening {
+        padding: 50px 30px;
+      }
+      
+      .parent {
+        padding: 28px;
+      }
+    }
+
+    /* Small Mobile Optimization */
+    @media (max-width: 360px) {
+      .header h1 {
+        font-size: 1.9rem;
+      }
+      
+      .header p {
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+      }
+      
+      .list-item {
+        font-size: 0.95rem;
+        padding: 14px 0;
+      }
+      
+      .opening {
+        padding: 30px 16px;
+      }
+      
+      .opening h2 {
+        font-size: 1.2rem;
+      }
+      
+      .parent {
+        padding: 20px;
+      }
+    }
+
+    /* Landscape Mode Optimization */
+    @media (max-height: 500px) and (orientation: landscape) {
+      body {
+        padding: 20px 16px;
+      }
+      
+      .header {
+        margin-bottom: 30px;
+        padding-bottom: 20px;
+      }
+      
+      .section {
+        margin-bottom: 40px;
+      }
+      
+      footer {
+        margin-top: 40px;
+        padding-top: 20px;
+      }
+    }
+
+    /* Reduced Motion */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        transition: none !important;
+        animation: none !important;
+      }
+    }
+
+    /* Dark Mode Support */
+    @media (prefers-color-scheme: dark) {
+      body {
+        background: #111;
+        color: #f0f0f0;
+      }
+      
+      .header p {
+        color: #aaa;
+      }
+      
+      .section-title {
+        color: #ddd;
+        border-bottom-color: #333;
+      }
+      
+      .list-item {
+        color: #ccc;
+        border-bottom-color: #333;
+      }
+      
+      .list-item:hover {
+        color: #fff;
+      }
+      
+      .opening {
+        background: #1a1a1a;
+      }
+      
+      .opening h2 {
+        color: #ddd;
+      }
+      
+      .opening p {
+        color: #aaa;
+      }
+      
+      .parent {
+        background: #1a1a1a;
+      }
+      
+      .parent h3 {
+        color: #ddd;
+      }
+      
+      .parent a {
+        color: #aaa;
+      }
+      
+      .parent a:hover {
+        color: #fff;
+      }
+      
+      footer {
+        color: #777;
+      }
+      
+      .divider {
+        background: #333;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <header class="header">
+      <h1>Varsha Swayamvaram</h1>
+      <p>Wedding & Traditional Couture</p>
+    </header>
+
+    <section class="section">
+      <h2 class="section-title">Collections & Services</h2>
+      <div class="list">
+        <div class="list-item">Banaras Sarees</div>
+        <div class="list-item">Kanchipuram Sarees</div>
+        <div class="list-item">Wedding Costumes</div>
+        <div class="list-item">Complementary Makeup</div>
+        <div class="list-item">Wedding Photography</div>
+        <div class="list-item">Guruvayoor Wedding Specials</div>
+        <div class="list-item">And more curated offerings</div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="opening">
+      <h2>Opening Shortly</h2>
+      <p>East Guruvayoor Nada</p>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="section">
+      <h2 class="section-title">Parent Companies</h2>
+      <div class="parents">
+        <div class="parent">
+          <h3>Mozhdeh Leather</h3>
+          <a href="https://mozhdehleather.com/" target="_blank">mozhdehleather.com</a>
+        </div>
+        <div class="parent">
+          <h3>Real American Technologies</h3>
+          <a href="https://realamericantechnologies.com/" target="_blank">realamericantechnologies.com</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © 2026 Varsha Swayamvaram
+    </footer>
+
+  </div>
+
+</body>
+</html>
